@@ -1,4 +1,3 @@
-import { Data } from "@/public/Data";
 import { PieChart } from "./PieChart";
 
 export function TopProducts({ data }) {
