@@ -52,6 +52,7 @@ export function SignIn() {
           <a className="text-blue-500">Forgot password?</a>
           <button
             type="submit"
+            onClick={() => signIn("google", { callbackUrl: '/' })}
             className="w-full bg-black text-white rounded-lg py-2 font-sans font-medium"
           >
             Sign In

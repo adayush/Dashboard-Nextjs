@@ -11,7 +11,9 @@ export default function Home({ data, stats }) {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    if (status === "unathenticated") {
+    console.log(status)
+    if (status === "unauthenticated") {
+      console.log('routing')
       router.push("/login");
     } else if (status === "authenticated") {
       setLoggedIn(true);
@@ -27,7 +29,7 @@ export default function Home({ data, stats }) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className="flex flex-col md:flex-row h-[100vh] p-6 gap-6 max-w-[1300px] m-auto">
+        <main className="flex flex-col md:flex-row h-[100vh] p-2 md:p-6 gap-6 max-w-[1300px] m-auto">
           <Nav signOut={() => signOut({ callbackUrl: "/login" })} />
           <Dashboard data={data} stats={stats} />
         </main>

@@ -17,7 +17,7 @@ export function Dashboard({ data, stats }) {
   }, []);
 
   return (
-    <div className="w-full h-full overflow-y-scroll flex flex-col gap-6 p-4">
+    <div className="h-full overflow-y-scroll flex flex-col gap-6 p-1 md:p-4">
       <div className="flex justify-between">
         <div>
           <h1 className="text-xl font-bold">Dashboard</h1>
