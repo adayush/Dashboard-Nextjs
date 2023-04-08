@@ -36,10 +36,10 @@ export default function Home({ data, stats }) {
 }
 
 export async function getStaticProps() {
-  let res = await fetch("https://6430098ec26d69edc8895f8e.mockapi.io/data");
+  let res = await fetch(`${process.env.API_URL}/data`);
   const data = await res.json();
 
-  res = await fetch("https://6430098ec26d69edc8895f8e.mockapi.io/stats");
+  res = await fetch(`${process.env.API_URL}/stats`);
   const stats = await res.json();
 
   return {
