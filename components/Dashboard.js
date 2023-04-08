@@ -23,7 +23,7 @@ export function Dashboard({ data, stats }) {
           <h1 className="text-xl font-bold">Dashboard</h1>
         </div>
         <div className="flex gap-3 items-center">
-          <input className="px-2 rounded-md" placeholder="Search..." />
+          <input className="hidden sm:block px-2 rounded-md" placeholder="Search..." />
           <div className="flex p-2">
             <Image
               src="/bell_icon.png"

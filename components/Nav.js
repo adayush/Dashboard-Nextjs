@@ -14,7 +14,7 @@ export function Nav() {
   }, []);
 
   return (
-    <div className="z-50 bg-black text-white w-full md:h-full rounded-2xl px-8 py-2 md:py-12 min-w-[220px] md:max-w-[250px] overflow-y-scroll">
+    <div className="z-50 bg-black text-white w-full md:h-full rounded-2xl px-8 py-2 md:py-12 min-w-[220px] md:max-w-[250px] md:overflow-y-scroll">
       <div className="flex md:flex-col justify-between h-full">
         <div>
           <h1 className="text-3xl font-semibold my-2 md:mb-12">Board.</h1>
