@@ -7,6 +7,7 @@ import { signOut } from "next-auth/react";
 export function Dashboard({ data, stats }) {
   const { data: session } = useSession();
   const [profileDropdown, setProfileDropdown] = useState(false);
+
   useEffect(() => {
     document.addEventListener("click", (event) => {
       if (event.target.id !== "profile") {
@@ -24,7 +25,12 @@ export function Dashboard({ data, stats }) {
         <div className="flex gap-3 items-center">
           <input className="px-2 rounded-md" placeholder="Search..." />
           <div className="flex p-2">
-            <Image src="/bell_icon.png" alt="bell icon" width="15" height="15" />
+            <Image
+              src="/bell_icon.png"
+              alt="bell icon"
+              width="15"
+              height="15"
+            />
           </div>
           <div className="relative">
             <Image
@@ -56,7 +62,13 @@ export function Dashboard({ data, stats }) {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-[#DDEFE0] rounded-2xl p-6">
           <div className="flex justify-end">
-            <Image className="" src="/revenue.png" alt="revenue icon" width="24" height="24" />
+            <Image
+              className=""
+              src="/revenue.png"
+              alt="revenue icon"
+              width="24"
+              height="24"
+            />
           </div>
           <p className="text-sm">Total Revenues</p>
           <p className="text-xl font-bold">
@@ -74,21 +86,39 @@ export function Dashboard({ data, stats }) {
             />
           </div>
           <p className="text-sm">Total Transactions</p>
-          <p className="text-xl font-bold">{Intl.NumberFormat("en-US").format(stats[1].value)}</p>
+          <p className="text-xl font-bold">
+            {Intl.NumberFormat("en-US").format(stats[1].value)}
+          </p>
         </div>
         <div className="bg-[#EFDADA] rounded-2xl p-6">
           <div className="flex justify-end">
-            <Image className="" src="/likes.png" alt="likes icon" width="24" height="24" />
+            <Image
+              className=""
+              src="/likes.png"
+              alt="likes icon"
+              width="24"
+              height="24"
+            />
           </div>
           <p className="text-sm">Total Likes</p>
-          <p className="text-xl font-bold">{Intl.NumberFormat("en-US").format(stats[2].value)}</p>
+          <p className="text-xl font-bold">
+            {Intl.NumberFormat("en-US").format(stats[2].value)}
+          </p>
         </div>
         <div className="bg-[#DEE0EF] rounded-2xl p-6">
           <div className="flex justify-end">
-            <Image className="" src="/users.png" alt="users icon" width="24" height="24" />
+            <Image
+              className=""
+              src="/users.png"
+              alt="users icon"
+              width="24"
+              height="24"
+            />
           </div>
           <p className="text-sm">Total Users</p>
-          <p className="text-xl font-bold">{Intl.NumberFormat("en-US").format(stats[3].value)}</p>
+          <p className="text-xl font-bold">
+            {Intl.NumberFormat("en-US").format(stats[3].value)}
+          </p>
         </div>
       </div>
       <Graph data={data} />

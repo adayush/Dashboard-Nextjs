@@ -6,17 +6,17 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Home({ data, stats }) {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    if (!session) {
+    if (status === "unathenticated") {
       router.push("/login");
-    } else {
+    } else if (status === "authenticated") {
       setLoggedIn(true);
     }
-  }, [session]);
+  }, [status]);
 
   if (loggedIn)
     return (
